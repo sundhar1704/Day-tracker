@@ -4,21 +4,46 @@
     "slug": "Day-tracker",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/image.png",
     "userInterfaceStyle": "light",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.sundhar.daytracker",
+      "infoPlist": { "ITSAppUsesNonExemptEncryption": false }
     },
     "android": {
+      "package": "com.sundhar.daytracker",
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./assets/android-icon-foreground.png",
-        "backgroundImage": "./assets/android-icon-background.png",
-        "monochromeImage": "./assets/android-icon-monochrome.png"
+        "backgroundColor": "#F0FFF4",
+        "foregroundImage": "./assets/image.png"
       }
     },
-    "web": {
-      "favicon": "./assets/favicon.png"
+    "web": { "favicon": "./assets/favicon.png" },
+    "plugins": [
+      "@react-native-community/datetimepicker",
+      "expo-sharing",
+      "expo-mail-composer",
+      "expo-notifications",
+      [
+        "expo-image-picker",
+        {
+          "cameraPermission": "Allow Day-tracker to use the camera for photos and receipts.",
+          "photosPermission": "Allow Day-tracker to access your photos for your profile picture and receipts.",
+          "microphonePermission": false
+        }
+      ],
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/image.png",
+          "imageWidth": 200,
+          "backgroundColor": "#F0FFF4"
+        }
+      ],
+      "expo-font"
+    ],
+    "extra": {
+      "eas": { "projectId": "6e6d3eb4-f07c-44ab-ac3a-96e1e0473763" }
     }
   }
 }
